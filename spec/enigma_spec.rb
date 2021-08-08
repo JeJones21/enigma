@@ -11,8 +11,13 @@ RSpec.describe Enigma do
     end
 
     it "can return today's date" do
-      expect(enigma.current_date.length).to eq(6)
       expect(enigma.current_date.class).to eq(String)
+      expect(enigma.current_date.length).to eq(6)
+    end
+
+    it "can create a randomized key" do
+      expect(enigma.randomized_key).to be_a(String)
+      expect(enigma.randomized_key.length).to eq(5)
     end
   end
 end
