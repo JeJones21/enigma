@@ -20,9 +20,10 @@ RSpec.describe Key do
   describe 'Object Methods' do
     it "can randomize keys" do
       key = Key.new
-      
+
       expect(key.randomized_key).to be_a(String)
       expect(key.randomized_key.length).to eq(5)
+
       allow(key).to receive(:randomized_key).and_return("08888")
       expect(key.randomized_key).to eq("08888")
     end
