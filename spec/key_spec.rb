@@ -28,17 +28,10 @@ RSpec.describe Key do
       expect(key.randomized_key).to eq("08888")
     end
 
-    it "can create keys A..D" do
+    it "can create keys" do
       key = Key.new
 
-      expected = {
-                  :a_key=>"02",
-                  :b_key=>"27",
-                  :c_key=>"71",
-                  :d_key=>"15"
-      }
-      expect(key.key_hash).to eq(expected)
-
+      expect(key.keys("40205")).to eq([40, 02, 20, 05])
     end
   end
 end
