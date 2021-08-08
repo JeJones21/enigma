@@ -14,14 +14,5 @@ RSpec.describe Enigma do
       expect(enigma.current_date.class).to eq(String)
       expect(enigma.current_date.length).to eq(6)
     end
-
-    xit "can create a randomized key" do
-      expect(enigma.randomized_key).to be_a(String)
-      expect(enigma.randomized_key.length).to eq(5)
-    end
-
-    xit "can create keys A..D" do
-
-    end
   end
 end
