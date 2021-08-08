@@ -1,3 +1,4 @@
+echo "coverage" >> .gitignore
 *.gem
 *.rbc
 /.config
