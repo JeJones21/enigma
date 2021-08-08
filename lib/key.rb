@@ -15,4 +15,13 @@ class Key
     #   @test_key = key
     # end
   end
+
+  def keys(key)
+    shifts = []
+    shifts << key[0..1].to_i
+    shifts << key[1..2].to_i
+    shifts << key[2..3].to_i
+    shifts << key[3..4].to_i
+    shifts
+  end
 end
