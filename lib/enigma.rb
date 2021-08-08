@@ -11,7 +11,11 @@ class Enigma
     Date.today.strftime("%d%m%y")
   end
 
-  def randomized_key
-    5.times.map{rand(10)}.join
-  end
+  # def randomized_key
+  #   5.times.map{rand(10)}.join
+  # end
+  #
+  # def create_keys
+  #
+  # end
 end
