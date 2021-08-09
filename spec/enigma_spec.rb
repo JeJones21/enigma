@@ -17,9 +17,6 @@ RSpec.describe Enigma do
     end
 
     it "can encrypt a message with a key and date" do
-      # allow(enigma).to receive(:current_date).and_return("090821")
-
-
       expected1 = {
                   encryption: "keder ohulw",
                   key: "02715",
@@ -52,6 +49,17 @@ RSpec.describe Enigma do
                   date: "040895"
                 }
       expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected3)
+    end
+
+    it "can decrypt a message if date is not given" do
+      allow(enigma).to receive(:current_date).and_return("090821")
+      encrypted = enigma.encrypt("hello world", "02715")
+      expected4 = {
+                  decryption: "hello world",
+                  key: "02715",
+                  date: "090821"
+                }
+      expect(enigma.decrypt(encrypted[:encryption], "02715")).to eq(expected4)
     end
   end
 end
