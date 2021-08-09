@@ -33,5 +33,11 @@ RSpec.describe Key do
 
       expect(key.keys("40205")).to eq([40, 02, 20, 05])
     end
+
+
+    it "can return today's date" do
+      expect(enigma.current_date.class).to eq(String)
+      expect(enigma.current_date.length).to eq(6)
+    end
   end
 end
