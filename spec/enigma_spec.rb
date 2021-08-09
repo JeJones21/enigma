@@ -26,15 +26,21 @@ RSpec.describe Enigma do
                   date: "040895"
                 }
 
+      expect(enigma.encrypt("hello world", "02715", "040895")).to eq(expected1)
+      expect(enigma.encrypt("pura vida", "01234", "090821")[:encryption])eq("ufriegilf")
+    end
+
+    it "can account for unexpected characters" do
       expected2 = {
                   encryption: "keder ohulw!",
                   key: "02715",
                   date: "040895"
                 }
+      expect(enigma.encrypt("hello world!", "02715", "040895")).to eq(expected2)
+    end
 
-    expect(enigma.encrypt("hello world", "02715", "040895")).to eq(expected1)
-    expect(enigma.encrypt("hello world!", "02715", "040895")).to eq(expected2)
-    expect(enigma.encrypt("pura vida", "01234", "090821")[:encryption]).to eq("ufriegilf")
+    xit "can decrypt messages" do
+
     end
   end
 end
