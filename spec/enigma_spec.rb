@@ -30,7 +30,7 @@ RSpec.describe Enigma do
       allow(enigma).to receive(:current_date).and_return("090821")
       allow(enigma).to receive(:randomized_key).and_return("01234")
 
-      expect(enigma.encrypt("pura vida", "01234", "090821")[:encryption]).to eq("ufriegilf")
+      expect(enigma.encrypt("pura vida")[:encryption]).to eq("ufriegilf")
     end
 
     it "can account for unexpected characters" do
