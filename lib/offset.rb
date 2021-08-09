@@ -2,10 +2,11 @@ require 'date'
 
 class Offset
 
-  attr_reader :character_set
+  attr_reader :character_set,
+              :date
 
   def initialize
-    # @date = date
+    @date = date
     @character_set = ("a".."z").to_a << " "
   end
 
@@ -19,7 +20,7 @@ class Offset
   end
 
   def splits
-    square_date.to_s.split("")
+    square_date.to_s.split('')
   end
 
   def last_four_strings
@@ -30,7 +31,7 @@ class Offset
     last_four_strings.map { |string| string.to_i  }
   end
 
-  
+
 
   # def acutal_offset
   #   last_four_strings.join.to_i
