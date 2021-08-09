@@ -27,7 +27,7 @@ RSpec.describe Enigma do
                 }
 
       expect(enigma.encrypt("hello world", "02715", "040895")).to eq(expected1)
-      expect(enigma.encrypt("pura vida", "01234", "090821")[:encryption])eq("ufriegilf")
+      expect(enigma.encrypt("pura vida", "01234",           "090821")[:encryption]).to eq("ufriegilf")
     end
 
     it "can account for unexpected characters" do
@@ -39,7 +39,13 @@ RSpec.describe Enigma do
       expect(enigma.encrypt("hello world!", "02715", "040895")).to eq(expected2)
     end
 
-    xit "can decrypt messages" do
+    it "can decrypt messages" do
+      expected3 = {
+                  decryption: "hello world",
+                  key: "02715",
+                  date: "040895"
+                }
+      expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected3)
 
     end
   end
