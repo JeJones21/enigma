@@ -33,5 +33,11 @@ RSpec.describe Offset do
 
       expect(offset.last_four_strings).to eq(["4", "0", "4" , "1"])
     end
+
+    it "can convert back to integers" do
+      allow(offset).to receive(:current_date).and_return("080821")
+
+      expect(offset.last_four_digits).to eq([4, 0, 4, 1])
+    end
   end
 end
