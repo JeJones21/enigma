@@ -42,6 +42,16 @@ RSpec.describe Enigma do
       expect(enigma.encrypt("hello world!", "02715", "040895")).to eq(expected2)
     end
 
+    it "can account for uppercase edge cases" do
+      expected5 = {
+                  encryption: "keder ohulw",
+                  key: "02715",
+                  date: "040895"
+                }
+      expect(enigma.encrypt("HELLO WORLD", "02715", "040895")).to eq(expected5)
+
+    end
+
     it "can decrypt messages" do
       expected3 = {
                   decryption: "hello world",
