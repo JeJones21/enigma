@@ -36,8 +36,10 @@ RSpec.describe Key do
 
 
     it "can return today's date" do
-      expect(enigma.current_date.class).to eq(String)
-      expect(enigma.current_date.length).to eq(6)
+      key = Key.new
+      
+      expect(key.current_date.class).to eq(String)
+      expect(key.current_date.length).to eq(6)
     end
   end
 end
