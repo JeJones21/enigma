@@ -11,7 +11,11 @@ class Offset
   end
 
   def current_date
-    #this is a helper method for offset.
+    #this is a helper method
     Date.today.strftime("%d%m%y")
+  end
+
+  def square_date
+    (date.to_i ** 2)
   end
 end
