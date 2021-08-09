@@ -30,4 +30,8 @@ class Offset
   def last_four_digits
     last_four_strings.map { |string| string.to_i  }
   end
+
+  def acutal_offset
+    last_four_strings.join.to_i
+  end
 end
