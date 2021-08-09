@@ -13,5 +13,11 @@ RSpec.describe Offset do
       expect(offset.character_set.class).to eq(Array)
       expect(offset.character_set.length).to eq(27)
     end
+
+    it "can square the date" do
+      allow(offset).to receive(:current_date).and_return("080821")
+
+      expect(offset.square_date).to eq(6532034041)
+    end
   end
 end
