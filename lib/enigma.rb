@@ -7,9 +7,7 @@ class Enigma
     @character_set = ("a".."z").to_a << " "
   end
 
-  def current_date
-    Date.today.strftime("%d%m%y")
-  end
+
 
   # def randomized_key
   #   5.times.map{rand(10)}.join
