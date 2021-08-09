@@ -32,17 +32,17 @@ RSpec.describe Key do
       expect(key.keys("40205")).to eq([40, 02, 20, 05])
       expect(key.keys("05746")).to eq([05, 57, 74, 46])
     end
-
-
-    it "can return today's date" do
-
-      expect(key.current_date.class).to eq(String)
-      expect(key.current_date.length).to eq(6)
-    end
-
-    it "creates an offset with the date" do
-
-      expect(key.offset_shift("040895")).to eq([1, 0, 2, 5])
-    end
-  end
+    #
+    #
+    # it "can return today's date" do
+    #
+    #   expect(key.current_date.class).to eq(String)
+    #   expect(key.current_date.length).to eq(6)
+    # end
+    #
+    # it "creates an offset with the date" do
+    #
+    #   expect(key.offset_shift("040895")).to eq([1, 0, 2, 5])
+    # end
+  # end
 end
