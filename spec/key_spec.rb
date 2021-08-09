@@ -2,24 +2,23 @@ require_relative 'spec_helper'
 require './lib/key'
 
 RSpec.describe Key do
-  describe 'Object Creation' do
-    it 'exists' do
-      key = Key.new
+  context 'Object Creation' do
+    key = Key.new
 
+    it 'exists' do
       expect(key).to be_a(Key)
     end
 
     it 'has readable attributes' do
-      key = Key.new
-
       expect(key.key).to be_a(String)
       expect(key.key.length).to eq(5)
     end
   end
 
-  describe 'Object Methods' do
+  context 'Object Methods' do
+    key = Key.new
+
     it "can randomize keys" do
-      key = Key.new
 
       expect(key.randomized_key).to be_a(String)
       expect(key.randomized_key.length).to eq(5)
@@ -29,7 +28,6 @@ RSpec.describe Key do
     end
 
     it "can create keys" do
-      key = Key.new
 
       expect(key.keys("40205")).to eq([40, 02, 20, 05])
       expect(key.keys("05746")).to eq([05, 57, 74, 46])
@@ -37,10 +35,14 @@ RSpec.describe Key do
 
 
     it "can return today's date" do
-      key = Key.new
 
       expect(key.current_date.class).to eq(String)
       expect(key.current_date.length).to eq(6)
+    end
+
+    it "creates an offset with the date" do
+
+      expect(key.offset_shift("040895")).to eq([1, 0, 2, 5])
     end
   end
 end
