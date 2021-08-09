@@ -19,5 +19,13 @@ RSpec.describe Offset do
 
       expect(offset.square_date).to eq(6532034041)
     end
+
+    it "can convert the squared date to strings" do
+      allow(offset).to receive(:current_date).and_return("080821")
+
+      expected = ["6", "5", "3", "2", "0", "3", "4", "0", "4" , "1"]
+
+      expect(offset.splits).to eq(expected)
+    end
   end
 end
