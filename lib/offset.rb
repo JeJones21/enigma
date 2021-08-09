@@ -23,5 +23,9 @@ class Offset
     square_date.to_s.split("")
   end
 
+  def last_four_strings
+    splits[-4, 4]
+  end
+
 
 end
