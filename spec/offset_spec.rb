@@ -27,5 +27,11 @@ RSpec.describe Offset do
 
       expect(offset.splits).to eq(expected)
     end
+
+    it "can extract the last 4 strings" do
+      allow(offset).to receive(:current_date).and_return("080821")
+
+      expect(offset.last_four_strings).to eq(["4", "0", "4" , "1"])
+    end
   end
 end
