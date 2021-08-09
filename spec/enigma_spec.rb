@@ -27,7 +27,7 @@ RSpec.describe Enigma do
                 }
 
       expect(enigma.encrypt("hello world", "02715", "040895")).to eq(expected1)
-      expect(enigma.encrypt("pura vida", "01234",           "090821")[:encryption]).to eq("ufriegilf")
+      expect(enigma.encrypt("pura vida", "01234", "090821")[:encryption]).to eq("ufriegilf")
     end
 
     it "can account for unexpected characters" do
