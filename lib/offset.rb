@@ -1,0 +1,37 @@
+require 'date'
+
+class Offset
+
+  attr_reader :date,
+              :character_set
+
+  def initialize(date = current_date)
+    @date = date
+    @character_set = ("a".."z").to_a << " "
+  end
+
+  def current_date
+    #this is a helper method
+    Date.today.strftime("%d%m%y")
+  end
+
+  def square_date
+    (date.to_i ** 2)
+  end
+
+  def splits
+    square_date.to_s.split("")
+  end
+
+  def last_four_strings
+    splits[-4, 4]
+  end
+
+  def last_four_digits
+    last_four_strings.map { |string| string.to_i  }
+  end
+
+  def acutal_offset
+    last_four_strings.join.to_i
+  end
+end
