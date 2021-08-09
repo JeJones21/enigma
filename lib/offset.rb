@@ -2,11 +2,10 @@ require 'date'
 
 class Offset
 
-  attr_reader :date,
-              :character_set
+  attr_reader :character_set
 
-  def initialize(date = current_date)
-    @date = date
+  def initialize
+    # @date = date
     @character_set = ("a".."z").to_a << " "
   end
 
@@ -16,7 +15,7 @@ class Offset
   end
 
   def square_date
-    (date.to_i ** 2)
+    (current_date.to_i ** 2)
   end
 
   def splits
@@ -27,11 +26,13 @@ class Offset
     splits[-4, 4]
   end
 
-  def last_four_digits
+  def offset_shift
     last_four_strings.map { |string| string.to_i  }
   end
 
-  def acutal_offset
-    last_four_strings.join.to_i
-  end
+  
+
+  # def acutal_offset
+  #   last_four_strings.join.to_i
+  # end
 end
