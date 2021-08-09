@@ -25,13 +25,10 @@ class Key
     shifts
   end
 
-  def current_date
-    #this is a helper method for offset.
-    Date.today.strftime("%d%m%y")
-  end
+
 
   def offset
-    
+
 
   end
 end
