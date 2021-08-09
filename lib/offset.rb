@@ -27,5 +27,7 @@ class Offset
     splits[-4, 4]
   end
 
-
+  def last_four_digits
+    last_four_strings.map { |string| string.to_i  }
+  end
 end
