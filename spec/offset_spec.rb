@@ -39,5 +39,11 @@ RSpec.describe Offset do
 
       expect(offset.last_four_digits).to eq([4, 0, 4, 1])
     end
+
+    it "can join all the offset helper methods to create actual offset" do
+      allow(offset).to receive(:current_date).and_return("080821")
+
+      expect(offset.acutal_offset).to eq(4041)
+    end
   end
 end
