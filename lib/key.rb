@@ -24,11 +24,4 @@ class Key
     shifts << key[3..4].to_i
     shifts
   end
-
-
-
-  def offset
-
-
-  end
 end
