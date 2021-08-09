@@ -49,6 +49,12 @@ class Enigma
     letters = message.downcase.split("")
     encrypted_characters(letters, shifts, key, date)
   end
+
+  def decrypt(ciphertext, key, date = current_date)
+    shifts = complete_shift(keys(key), offset_shift(date))
+    letters = ciphertext.downcase.split("")
+    decrypted_characters(letters, shifts, key, date)
+  end
   # def randomized_key
   #   5.times.map{rand(10)}.join
   # end
