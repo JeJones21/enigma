@@ -32,12 +32,13 @@ RSpec.describe Key do
       key = Key.new
 
       expect(key.keys("40205")).to eq([40, 02, 20, 05])
+      expect(key.keys("05746")).to eq([05, 57, 74, 46])
     end
 
 
     it "can return today's date" do
       key = Key.new
-      
+
       expect(key.current_date.class).to eq(String)
       expect(key.current_date.length).to eq(6)
     end
