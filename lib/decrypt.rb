@@ -1,0 +1,27 @@
+require './lib/enigma'
+require './lib/key'
+require './lib/encryptionable'
+require './lib/offset'
+
+handle = File.open(ARGV[0], "r")
+incoming_text = handle.read
+handle.close
+
+enigma = Enigma.new
+hash = eval(incoming_text)
+decrypted_message = enigma.decrypt(hash[:encryption], ARGV[2], ARGV[3])
+puts "Created '#{ARGV[1]}' with the key #{decrypted_message[:key]} and date #{
+decrypted_message[:date]}"
+
+writer = File.open(ARGV[1], "w")
+writer.write(decrypted_message[:decryption])
+writer.close
+# enigma = Enigma.new
+# file = File.open(ARGV[0], "r")
+# message = file.read
+#
+# result = enigma.decrypt(message, ARGV[2], ARGV[3])
+# new_file = File.open(ARGV[1], "w")
+# new_file.write(result[:decryption])
+# new_file.close
+# puts "Created '#{ARGV[1]}' with the key #{result[:key]} and date #{result[:date]}"
