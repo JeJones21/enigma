@@ -30,10 +30,4 @@ class Offset
   def offset_shift
     last_four_strings.map { |string| string.to_i  }
   end
-
-
-
-  # def acutal_offset
-  #   last_four_strings.join.to_i
-  # end
 end
