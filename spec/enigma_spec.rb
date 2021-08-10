@@ -43,33 +43,32 @@ RSpec.describe Enigma do
     end
 
     it "can account for uppercase edge cases" do
-      expected5 = {
+      expected3 = {
                   encryption: "keder ohulw",
                   key: "02715",
                   date: "040895"
                 }
-      expect(enigma.encrypt("HELLO WORLD", "02715", "040895")).to eq(expected5)
-
+      expect(enigma.encrypt("HELLO WORLD", "02715", "040895")).to eq(expected3)
     end
 
     it "can decrypt messages" do
-      expected3 = {
+      expected4 = {
                   decryption: "hello world",
                   key: "02715",
                   date: "040895"
                 }
-      expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected3)
+      expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected4)
     end
 
     it "can decrypt a message if date is not given" do
       allow(enigma).to receive(:current_date).and_return("090821")
       encrypted = enigma.encrypt("hello world", "02715")
-      expected4 = {
+      expected5 = {
                   decryption: "hello world",
                   key: "02715",
                   date: "090821"
                 }
-      expect(enigma.decrypt(encrypted[:encryption], "02715")).to eq(expected4)
+      expect(enigma.decrypt(encrypted[:encryption], "02715")).to eq(expected5)
     end
   end
 end
