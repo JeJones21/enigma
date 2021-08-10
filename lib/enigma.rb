@@ -30,7 +30,7 @@ class Enigma
     #error else without rescue is useless
     rand(99999).to_s.rjust(5, "0")
   end
-  
+
   def keys(key)
     shifts = []
     shifts << key[0..1].to_i
@@ -60,11 +60,4 @@ class Enigma
     letters = ciphertext.downcase.split("")
     decrypted_characters(letters, shifts, key, date)
   end
-  # def randomized_key
-  #   5.times.map{rand(10)}.join
-  # end
-  #
-  # def create_keys
-  #
-  # end
 end
