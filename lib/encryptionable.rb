@@ -25,5 +25,4 @@ module Encryptionable
     end
     decrypted
   end
-
 end
