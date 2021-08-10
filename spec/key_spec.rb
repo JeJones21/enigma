@@ -44,5 +44,5 @@ RSpec.describe Key do
     #
     #   expect(key.offset_shift("040895")).to eq([1, 0, 2, 5])
     # end
-  # end
+  end
 end
