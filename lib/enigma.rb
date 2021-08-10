@@ -26,6 +26,11 @@ class Enigma
     shifts
   end
 
+  def randomized_key
+    #error else without rescue is useless
+    rand(99999).to_s.rjust(5, "0")
+  end
+  
   def keys(key)
     shifts = []
     shifts << key[0..1].to_i
